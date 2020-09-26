@@ -6,8 +6,9 @@ setup(
     packages=["purplepi", "purplepi.commands"],
     include_package_data=True,
     install_requires=["click",
-        "pyfiglet",
-        "yfinance",],
+        "adafruit-circuitpython-rgb-display",
+        "yfinance",
+        "lxml",],
     entry_points="""
         [console_scripts]
         purplepi=purplepi.cli:cli
