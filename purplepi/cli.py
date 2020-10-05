@@ -1,7 +1,9 @@
 import os
 import sys
-
 import click
+from click_threading import Thread
+import digitalio
+import board
 
 
 CONTEXT_SETTINGS = dict(auto_envvar_prefix="PURPLEPI")
@@ -21,7 +23,7 @@ class Environment:
     def vlog(self, msg, *args):
         """Logs a message to stderr only if verbose is enabled."""
         if self.verbose:
-            self.log(msg, *args)
+            self.log(click.style((msg, *args), fg='red'))
 
 
 pass_environment = click.make_pass_decorator(Environment, ensure=True)

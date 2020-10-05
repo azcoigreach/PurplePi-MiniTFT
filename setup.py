@@ -5,10 +5,13 @@ setup(
     version="0.1.0",
     packages=["purplepi", "purplepi.commands"],
     include_package_data=True,
-    install_requires=["click",
+    install_requires=[
+        "click",
+        "click-threading",
         "adafruit-circuitpython-rgb-display",
         "yfinance",
-        "lxml",],
+        "lxml",
+        ],
     entry_points="""
         [console_scripts]
         purplepi=purplepi.cli:cli
